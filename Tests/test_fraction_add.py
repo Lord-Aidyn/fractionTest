@@ -17,6 +17,10 @@ class test_fraction_add(unittest.TestCase):
     self.assertEqual(numerator, value.numerator)
     self.assertEqual(denominator, value.denominator)
 
+  def test_assert_raises(self):
+    with self.assertRaises(TypeError)
+      Fraction(1, 2) + "Test"
+
   def test_add_positive_fractions(self):
     product = self._add(Fraction(1, 2), Fraction(3, 4))
     self._assert_fraction(product, 3, 8)
