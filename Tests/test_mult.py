@@ -9,6 +9,11 @@ class test_fraction_mult(unittest.TestCase):
     except TypeError:
       self.skipTest("Fraction multiplication does not support this operand type.")
 
+  def test_assert_raises(self):
+    with self.assertRaises(TypeError)
+      Fraction(1, 2) * "Test"
+    
+
   def _assert_fraction(self, value, numerator, denominator):
     if not isinstance(value, Fraction):
       self.skipTest("Fraction multiplication is not implemented yet.")
